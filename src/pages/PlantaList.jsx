@@ -19,7 +19,6 @@ function PlantaList() {
 
     try {
      
-      // const response = await axios.get("http://localhost:5005/api/plantas")
       const response = await getAllPlantasService()
 
       setAllPlantas(response.data)
@@ -27,17 +26,15 @@ function PlantaList() {
     } catch (error) {
       if (error.response.status === 401) {
         navigate("/login")
-        // esto seria una forma sencilla de enviar el usuario a login cuando no tiene token/token invalido
-        // pero hay una mejor => la mejor es con HOC IsPrivate
       } else {
         navigate("/error")
       }
     }
   }
 
-  // if (allPlantas === null) {
-  //   return <h3>... Loading</h3>
-  // }
+  if (allPlantas === null) {
+    return <h3>... Loading</h3>
+  }
 
   return (
     <div>
@@ -52,7 +49,7 @@ function PlantaList() {
           return (
             <div key={eachPlanta._id}>
               
-              <Link to={`/plantas/${eachPlanta._id}/details`}>{eachPlanta.name}</Link>
+              <Link to={`/plantas/${eachPlanta._id}/details`}>{eachPlanta.nombre}</Link>
             </div>
           )
         })}

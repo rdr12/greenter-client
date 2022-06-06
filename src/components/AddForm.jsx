@@ -1,5 +1,4 @@
 import { useState } from "react";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { addNewPlantaService } from "../services/planta.services";
 
@@ -48,7 +47,7 @@ function AddForm(props) {
       <h3>Añade una Planta</h3>
 
       <form onSubmit={handleSubmit}>
-        <label htmlFor="title">Nombre de la Planta:</label>
+        <label htmlFor="nombre">Nombre de la Planta:</label>
         <input
           type="text"
           name="nombre"
@@ -82,16 +81,10 @@ function AddForm(props) {
         <input
           type="text"
           name="principiosActivos"
-          onChange={handleHabitatRecoleccionChange}
-          value={principiosActivos}
-        />
-        <label htmlFor="habitatRecoleccion">Principios activos:</label>
-        <input
-          type="text"
-          name="principiosActivos"
           onChange={handlePrincipiosActivosChange}
           value={principiosActivos}
         />
+       
         <label htmlFor="habitatRecoleccion">Empleo:</label>
         <input
           type="text"
