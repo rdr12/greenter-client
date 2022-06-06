@@ -37,6 +37,10 @@ function Navbar() {
             {" "}
             Listado de plantas{" "}
           </NavLink>
+          <NavLink to="/plantas/PlantaAdd" end={true} style={toggleStyles}>
+            {" "}
+            Añadir una planta{" "}
+          </NavLink>
           <button onClick={handleLogout}>Cerrar sesion</button>
         </nav>
       ) : (

@@ -5,7 +5,7 @@ const getAllPlantasService = () => {
 };
 
 const addNewPlantaService = (newPlanta) => {
-  return service.post("/plantas", newPlanta);
+  return service.post("/plantas/plantaAdd", newPlanta);
 };
 
 const getPlantaDetailsService = (id) => {

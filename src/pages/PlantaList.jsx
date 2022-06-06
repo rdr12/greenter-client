@@ -1,40 +1,35 @@
 import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom";
 import { getAllPlantasService } from "../services/planta.services";
 
 function PlantaList() {
-
   // 1. Estado para la data
-  const [ allPlantas, setAllPlantas ] = useState(null)
+  const [allPlantas, setAllPlantas] = useState(null);
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   // 2. ComponentDidMount
   useEffect(() => {
-    getAllPlantas()
+    getAllPlantas();
     // eslint-disable-next-line
-  }, [])
-  
+  }, []);
 
   // 3. La funcion que busca la data
   const getAllPlantas = async () => {
-
     try {
-     
-      const response = await getAllPlantasService()
+      const response = await getAllPlantasService();
 
-      setAllPlantas(response.data)
-
+      setAllPlantas(response.data);
     } catch (error) {
       if (error.response.status === 401) {
-        navigate("/login")
+        navigate("/login");
       } else {
-        navigate("/error")
+        navigate("/error");
       }
     }
-  }
+  };
 
   if (allPlantas === null) {
-    return <h3>... Loading</h3>
+    return <h3>... Loading</h3>;
   }
 
   return (
@@ -45,15 +40,16 @@ function PlantaList() {
       {/* // 4. el Loading */}
       {allPlantas === null && <h3>... Loading</h3>}
 
-      {allPlantas !== null && allPlantas.map((eachPlanta) => {
+      {allPlantas !== null &&
+        allPlantas.map((eachPlanta) => {
           return (
             <div key={eachPlanta._id}>
-              
-              <Link to={`/plantas/${eachPlanta._id}/details`}>{eachPlanta.nombre}</Link>
+              <Link to={`/plantas/${eachPlanta._id}/details`}>
+                {eachPlanta.nombre}
+              </Link>
             </div>
-          )
+          );
         })}
-
     </div>
   );
 }

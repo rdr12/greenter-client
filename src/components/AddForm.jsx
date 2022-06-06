@@ -21,10 +21,11 @@ function AddForm(props) {
   const handlePrincipiosActivosChange = (e) =>
     setPrincipiosActivos(e.target.value);
   const handleEmpleoChange = (e) => setEmpleo(e.target.value);
-
+  const handleImageChange = (e) => setImage(e.target.value);
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // ... add the planta here
+
     try {
       const newPlanta = {
         nombre,
@@ -33,9 +34,9 @@ function AddForm(props) {
         habitatRecoleccion,
         principiosActivos,
         empleo,
+        image,
       };
 
-      
       await addNewPlantaService(newPlanta);
       props.getAllPlantas();
     } catch (error) {
@@ -47,7 +48,7 @@ function AddForm(props) {
     <div>
       <h3>Añadir Planta</h3>
 
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="formulario">
         <label htmlFor="nombre">Nombre de la Planta:</label>
         <input
           type="text"
@@ -85,7 +86,7 @@ function AddForm(props) {
           onChange={handlePrincipiosActivosChange}
           value={principiosActivos}
         />
-       
+
         <label htmlFor="habitatRecoleccion">Empleo:</label>
         <input
           type="text"
@@ -94,31 +95,15 @@ function AddForm(props) {
           value={empleo}
         />
 
-        <label htmlFor="conatinebutton-file">Sube una imagen:</label>
+        <label htmlFor="image">Añade una imagen:</label>
         <input
           type="file"
-          id="image"
+          name="image"
+          onChange={handleImageChange}
           value={image}
         />
 
-
-        {/* <label htmlFor="contained-button-file">
-        <Button variant="contained" color="primary" component="span">
-          Sube una imagen:
-        </Button>
-      </label>
-      <h3>  OR  </h3>
-      <input accept="image/*" id="icon-button-file"
-        type="file" style={{ display: 'none' }} />
-      <label htmlFor="icon-button-file">
-        <IconButton color="primary" aria-label="upload picture"
-        component="span">
-          <PhotoCamera />
-        </IconButton>
-      </label> */}
-
-
-        <button type="submit">Añadir</button>
+        <button type="submit">Enviar</button>
       </form>
     </div>
   );
