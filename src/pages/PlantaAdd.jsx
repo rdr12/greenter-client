@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom"
+import AddForm from "../components/AddForm";
+import { useNavigate } from "react-router-dom"
 import { getAllPlantasService } from "../services/planta.services";
 
-function PlantaList() {
+function PlantaAdd() {
 
   // 1. Estado para la data
   const [ allPlantas, setAllPlantas ] = useState(null)
@@ -39,23 +40,11 @@ function PlantaList() {
 
   return (
     <div>
-      <hr />
-      <h3>Listado de Plantas</h3>
 
-      {/* // 4. el Loading */}
-      {allPlantas === null && <h3>... Loading</h3>}
-
-      {allPlantas !== null && allPlantas.map((eachPlanta) => {
-          return (
-            <div key={eachPlanta._id}>
-              
-              <Link to={`/plantas/${eachPlanta._id}/details`}>{eachPlanta.nombre}</Link>
-            </div>
-          )
-        })}
-
+      <AddForm getAllPlantas={getAllPlantas}/>
+      
     </div>
   );
 }
 
-export default PlantaList;
+export default PlantaAdd;

@@ -4,11 +4,12 @@ import Home from "./pages/Home";
 import PlantaList from "./pages/PlantaList";
 import PlantaDetails from "./pages/PlantaDetails";
 import PlantaEdit from "./pages/PlantaEdit";
-import Error from "./pages/Error";
-import NotFound from "./pages/NotFound";
+import Error from "./pages/errores/Error";
+import NotFound from "./pages/errores/NotFound";
 import Navbar from "./components/Navbar";
 import Signup from "./pages/auth/Signup";
 import Login from "./pages/auth/Login";
+import PlantaAdd from "./pages/PlantaAdd";
 
 function App() {
   
@@ -21,6 +22,7 @@ function App() {
         <Route path="/plantas" element={<PlantaList />} />
         <Route path="/plantas/:id/details" element={<PlantaDetails />} />
         <Route path="/plantas/:id/edit" element={<PlantaEdit />} />
+        <Route path="/plantas/plantaAdd" element={<PlantaAdd />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
 

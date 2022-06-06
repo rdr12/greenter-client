@@ -35,7 +35,7 @@ function Navbar() {
           </NavLink>
           <NavLink to="/plantas" end={true} style={toggleStyles}>
             {" "}
-            Ver Lista{" "}
+            Listado de plantas{" "}
           </NavLink>
           <button onClick={handleLogout}>Cerrar sesion</button>
         </nav>

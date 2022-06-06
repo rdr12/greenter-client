@@ -51,6 +51,7 @@ function PlantaEdit() {
 
   useEffect(() => {
     getPlantaDetails()
+    // eslint-disable-next-line
   }, [])
 
   const getPlantaDetails = async () => {

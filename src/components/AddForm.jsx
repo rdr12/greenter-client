@@ -9,6 +9,7 @@ function AddForm(props) {
   const [habitatRecoleccion, setHabitatRecoleccion] = useState("");
   const [principiosActivos, setPrincipiosActivos] = useState("");
   const [empleo, setEmpleo] = useState("");
+  const [image, setImage] = useState("");
 
   const navigate = useNavigate();
 
@@ -20,6 +21,7 @@ function AddForm(props) {
   const handlePrincipiosActivosChange = (e) =>
     setPrincipiosActivos(e.target.value);
   const handleEmpleoChange = (e) => setEmpleo(e.target.value);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     // ... add the planta here
@@ -33,9 +35,8 @@ function AddForm(props) {
         empleo,
       };
 
-      // await axios.post("http://localhost:5005/api/plantas", newPlanta)
+      
       await addNewPlantaService(newPlanta);
-      // navigate("/plantas") // estoy en la misma pagina. No refresco nada >:)
       props.getAllPlantas();
     } catch (error) {
       navigate("/error");
@@ -44,7 +45,7 @@ function AddForm(props) {
 
   return (
     <div>
-      <h3>Añade una Planta</h3>
+      <h3>Añadir Planta</h3>
 
       <form onSubmit={handleSubmit}>
         <label htmlFor="nombre">Nombre de la Planta:</label>
@@ -92,6 +93,30 @@ function AddForm(props) {
           onChange={handleEmpleoChange}
           value={empleo}
         />
+
+        <label htmlFor="conatinebutton-file">Sube una imagen:</label>
+        <input
+          type="file"
+          id="image"
+          value={image}
+        />
+
+
+        {/* <label htmlFor="contained-button-file">
+        <Button variant="contained" color="primary" component="span">
+          Sube una imagen:
+        </Button>
+      </label>
+      <h3>  OR  </h3>
+      <input accept="image/*" id="icon-button-file"
+        type="file" style={{ display: 'none' }} />
+      <label htmlFor="icon-button-file">
+        <IconButton color="primary" aria-label="upload picture"
+        component="span">
+          <PhotoCamera />
+        </IconButton>
+      </label> */}
+
 
         <button type="submit">Añadir</button>
       </form>

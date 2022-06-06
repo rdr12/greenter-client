@@ -11,6 +11,7 @@ function PlantaDetails() {
 
   useEffect(() => {
     getPlantaDetails()
+    // eslint-disable-next-line
   }, [])
 
   const getPlantaDetails = async () => {
@@ -47,7 +48,7 @@ function PlantaDetails() {
     <div>
       <h3>Detalles de la planta</h3>
 
-      <h4>Title: {plantaDetails.nombre}</h4>
+      <h4>Nombre: {plantaDetails.nombre}</h4>
       <p>Description: {plantaDetails.description}</p>
       <p>Imagen: {plantaDetails.image}</p>
       <p>Parte utilizada: {plantaDetails.parteUtilizada}</p>
