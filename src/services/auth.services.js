@@ -1,5 +1,15 @@
 import service from "./config.services";
 
+service.interceptors.request.use((config) => {
+  const storedToken = localStorage.getItem("authToken");
+  if (storedToken) {
+    config.headers = { Authorization: `Bearer ${storedToken}` };
+  }
+  return config;
+});
+
+
+
 const signupService = (user) => {
   return service.post("/auth/signup", user);
 };

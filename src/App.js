@@ -10,12 +10,15 @@ import Navbar from "./components/Navbar";
 import Signup from "./pages/auth/Signup";
 import Login from "./pages/auth/Login";
 import PlantaAdd from "./pages/PlantaAdd";
+// import AllComentarios from "./components/AllComentarios"
+import Profile from "./pages/profile/Profile";
+import ProfileEdit from "./pages/profile/ProfileEdit";
 
 function App() {
-  
   return (
     <div className="App">
       <Navbar />
+      {/* <AllComentarios /> */}
 
       <Routes>
         <Route path="/" element={<Home />} />
@@ -25,6 +28,10 @@ function App() {
         <Route path="/plantas/plantaAdd" element={<PlantaAdd />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
+
+        {/* Profile */}
+        <Route path="/pro" element={<Profile />} />
+        <Route path="/profile/fileedit" element={<ProfileEdit />} />
 
         {/* error Front End routes */}
         <Route path="/error" element={<Error />} />

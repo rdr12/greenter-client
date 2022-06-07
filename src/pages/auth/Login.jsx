@@ -43,33 +43,36 @@ function Login() {
   };
 
   return (
-    <div>
+    <div class="form-group">
       <h1>Log In</h1>
 
       <form onSubmit={handleLogin}>
-        <label>Email:</label>
-        <input
-          type="email"
-          name="email"
-          value={email}
-          onChange={handleEmailChange}
-        />
+        <div class="row">
+          <label htmlFor="email">Email:</label>
+          <input
+            type="email"
+            name="email"
+            value={email}
+            onChange={handleEmailChange}
+          />
+        </div>
 
         <br />
-
-        <label>Password:</label>
-        <input
-          type="password"
-          name="password"
-          value={password}
-          onChange={handlePasswordChange}
-        />
-
+        <div class="row">
+          <label htmlFor="password">Contraseña:</label>
+          <input
+            type="password"
+            name="password"
+            value={password}
+            onChange={handlePasswordChange}
+          />
+        </div>
         <br />
 
         {errorMessage !== null && <p>{errorMessage}</p>}
-
-        <button type="submit">Login</button>
+        <div class="row">
+          <button type="submit">Login</button>
+        </div>
       </form>
     </div>
   );

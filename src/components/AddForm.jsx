@@ -22,7 +22,7 @@ function AddForm(props) {
     setPrincipiosActivos(e.target.value);
   const handleEmpleoChange = (e) => setEmpleo(e.target.value);
   const handleImageChange = (e) => setImage(e.target.value);
-  
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -45,7 +45,7 @@ function AddForm(props) {
   };
 
   return (
-    <div>
+    <div class="form-group">
       <h3>Añadir Planta</h3>
 
       <form onSubmit={handleSubmit} className="formulario">

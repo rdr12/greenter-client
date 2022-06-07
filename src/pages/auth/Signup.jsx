@@ -41,43 +41,46 @@ function Signup() {
   };
 
   return (
-    <div>
+    <div classname="container">
       <h1>Sign Up</h1>
 
       <form onSubmit={handleSignup}>
-        <label>Name:</label>
-        <input
-          type="text"
-          name="username"
-          value={username}
-          onChange={handleUsernameChange}
-        />
+        <div class="row">
+          <label htmlFor="user">Nombre:</label>
+          <input
+            type="text"
+            name="username"
+            value={username}
+            onChange={handleUsernameChange}
+          />
+        </div>
+        <br />
+        <div class="row">
+          <label htmlFor="email">Email:</label>
+          <input
+            type="email"
+            name="email"
+            value={email}
+            onChange={handleEmailChange}
+          />
+        </div>
 
         <br />
-
-        <label>Email:</label>
-        <input
-          type="email"
-          name="email"
-          value={email}
-          onChange={handleEmailChange}
-        />
-
-        <br />
-
-        <label>Password:</label>
-        <input
-          type="password"
-          name="password"
-          value={password}
-          onChange={handlePasswordChange}
-        />
-
+        <div class="row">
+          <label htmlFor="constraseña">Contraseña:</label>
+          <input
+            type="password"
+            name="password"
+            value={password}
+            onChange={handlePasswordChange}
+          />
+        </div>
         <br />
 
         {errorMessage !== null && <p>{errorMessage}</p>}
-
-        <button type="submit">Signup</button>
+        <div class="row">
+          <button type="submit">Signup</button>
+        </div>
       </form>
     </div>
   );

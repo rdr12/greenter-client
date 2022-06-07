@@ -24,10 +24,45 @@ function Navbar() {
   };
 
   return (
-    <div>
+    <div class="container-fluid">
       {user !== null && <p>Bienvenido: {user.username}</p>}
 
       {isLoggedIn === true ? (
+        <nav class="navbar navbar-dark bg-dark">
+          <img
+            src="./src/assets/logo-greenter.png"
+            width="30"
+            height="30"
+            class="d-inline-block align-top"
+            alt=""
+          ></img>
+
+          <NavLink to="/" style={toggleStyles}>
+            {" "}
+            Home{" "}
+          </NavLink>
+          <NavLink to="/plantas" end={true} style={toggleStyles}>
+            {" "}
+            Plantas Medicinales{" "}
+          </NavLink>
+          <NavLink to="/plantas/PlantaAdd" end={true} style={toggleStyles}>
+            {" "}
+            Añadir una planta{" "}
+          </NavLink>
+          <NavLink to="/profile">Profile Page</NavLink>
+
+          <NavLink to="/profile/edit">Edit Profile</NavLink>
+          <NavLink
+            to="/"
+            end={true}
+            style={toggleStyles}
+            onClick={handleLogout}
+          >
+            {" "}
+            Cerrar sesión{" "}
+          </NavLink>
+        </nav>
+      ) : (
         <nav>
           <NavLink to="/" style={toggleStyles}>
             {" "}
@@ -35,19 +70,7 @@ function Navbar() {
           </NavLink>
           <NavLink to="/plantas" end={true} style={toggleStyles}>
             {" "}
-            Listado de plantas{" "}
-          </NavLink>
-          <NavLink to="/plantas/PlantaAdd" end={true} style={toggleStyles}>
-            {" "}
-            Añadir una planta{" "}
-          </NavLink>
-          <button onClick={handleLogout}>Cerrar sesion</button>
-        </nav>
-      ) : (
-        <nav>
-          <NavLink to="/" style={toggleStyles}>
-            {" "}
-            Home{" "}
+            Plantas Medicinales{" "}
           </NavLink>
           <NavLink to="/signup" style={toggleStyles}>
             {" "}

@@ -35,7 +35,7 @@ function PlantaList() {
   return (
     <div>
       <hr />
-      <h3>Listado de Plantas</h3>
+      <h3>Plantas</h3>
 
       {/* // 4. el Loading */}
       {allPlantas === null && <h3>... Loading</h3>}
