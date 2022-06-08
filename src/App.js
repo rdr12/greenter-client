@@ -30,8 +30,8 @@ function App() {
         <Route path="/login" element={<Login />} />
 
         {/* Profile */}
-        <Route path="/pro" element={<Profile />} />
-        <Route path="/profile/fileedit" element={<ProfileEdit />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/profile/edit" element={<ProfileEdit />} />
 
         {/* error Front End routes */}
         <Route path="/error" element={<Error />} />

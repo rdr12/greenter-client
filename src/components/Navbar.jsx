@@ -30,7 +30,7 @@ function Navbar() {
       {isLoggedIn === true ? (
         <nav class="navbar navbar-dark bg-dark">
           <img
-            src="./src/assets/logo-greenter.png"
+            src="../assets/logo-greenter.png"
             width="30"
             height="30"
             class="d-inline-block align-top"
@@ -49,9 +49,9 @@ function Navbar() {
             {" "}
             Añadir una planta{" "}
           </NavLink>
-          <NavLink to="/profile">Profile Page</NavLink>
+          <NavLink to="/profile">Profile</NavLink>
 
-          <NavLink to="/profile/edit">Edit Profile</NavLink>
+          <NavLink to="/profile/edit">Edita el Profile</NavLink>
           <NavLink
             to="/"
             end={true}
@@ -63,7 +63,15 @@ function Navbar() {
           </NavLink>
         </nav>
       ) : (
-        <nav>
+        
+        <nav class="navbar navbar-dark bg-dark">
+          <img
+            src="../assets/logo-greenter.png"
+            width="30"
+            height="30"
+            class="d-inline-block align-top"
+            alt=""
+          ></img>
           <NavLink to="/" style={toggleStyles}>
             {" "}
             Home{" "}

@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { deletePlantaService, getPlantaDetailsService } from "../services/planta.services";
 import { useParams, useNavigate, Link } from "react-router-dom";
-import AllComentarios from "../components/AllComentarios";
+
+// import AllComentarios from "../components/AllComentarios";
 
 function PlantaDetails() {
 
@@ -49,6 +50,7 @@ function PlantaDetails() {
     <div>
       <h3>Detalles de la planta</h3>
 
+      <p>Imagen: {plantaDetails.image }</p>
       <h4>Nombre: {plantaDetails.nombre}</h4>
       <p>Description: {plantaDetails.description}</p>
       <p>Imagen: {plantaDetails.image}</p>
@@ -56,8 +58,10 @@ function PlantaDetails() {
       <p>Hábitat de recolección: {plantaDetails.habitatRecoleccion}</p>
       <p>Principios activos: {plantaDetails.principiosActivos}</p>
       <p>Empleo: {plantaDetails.empleo}</p>
+      
       <button onClick={handleDelete}>Borrar</button>
-      <Link to = {`/plantas/${id}/edit`}><button>Edit</button></Link>
+      <Link to = {`/plantas/${id}/edit`}><button>Editar</button></Link>
+      
 
     {/* <AllComentarios /> */}
 
