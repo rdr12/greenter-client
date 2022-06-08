@@ -1,15 +1,16 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { addNewPlantaService } from "../services/planta.services";
+import {uploadService} from "../services/profile.services"
 
-function AddForm(props) {
+function AddForm() {
   const [nombre, setNombre] = useState("");
   const [description, setDescription] = useState("");
   const [parteUtilizada, setParteUtilizada] = useState("");
   const [habitatRecoleccion, setHabitatRecoleccion] = useState("");
   const [principiosActivos, setPrincipiosActivos] = useState("");
   const [empleo, setEmpleo] = useState("");
-  const [image, setImage] = useState("");
+  const [image, setImage] = useState(null);
 
   const navigate = useNavigate();
 
@@ -21,10 +22,31 @@ function AddForm(props) {
   const handlePrincipiosActivosChange = (e) =>
     setPrincipiosActivos(e.target.value);
   const handleEmpleoChange = (e) => setEmpleo(e.target.value);
-  const handleImageChange = (e) => setImage(e.target.value);
+  // const handleImageChange = (e) => setImage("image", (e.target.files[0]));
+  // const uploadForm = new FormData()
+  // uploadForm.append("image", (e.target.files[0]))
+  
+  const handleImageChange = async(e) => {
+
+    console.log(e.target.files[0])
+
+    const uploadForm = new FormData()
+    uploadForm.append("image", e.target.files[0])
+
+    try {
+
+      const response = await uploadService(uploadForm)
+      setImage(response.data)
+
+    } catch {
+      navigate("/error")
+    }
+
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+   
 
     try {
       const newPlanta = {
@@ -38,7 +60,7 @@ function AddForm(props) {
       };
 
       await addNewPlantaService(newPlanta);
-      props.getAllPlantas();
+     navigate("/plantas")
     } catch (error) {
       navigate("/error");
     }
@@ -95,13 +117,16 @@ function AddForm(props) {
           value={empleo}
         />
 
-        <label htmlFor="image">Añade una imagen:</label>
+        {/* <label htmlFor="image">Añade una imagen:</label>
         <input
           type="file"
           name="image"
           onChange={handleImageChange}
           value={image}
-        />
+        /> */}
+
+        <label htmlFor="image">Imagen</label>
+        <input type="file" name="image" onChange={handleImageChange} />
 
         <button type="submit">Enviar</button>
       </form>

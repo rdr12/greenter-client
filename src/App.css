@@ -1,6 +1,10 @@
 .App {
   text-align: center;
 }
+body {
+  background-image: url("./assets/background.png");
+  background-color: #cccccc;
+ }
 
 /* FORMULARIO */
 

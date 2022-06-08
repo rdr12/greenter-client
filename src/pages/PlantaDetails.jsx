@@ -1,18 +1,22 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { deletePlantaService, getPlantaDetailsService } from "../services/planta.services";
 import { useParams, useNavigate, Link } from "react-router-dom";
+import {AuthContext} from "../context/auth.context"
+
 
 // import AllComentarios from "../components/AllComentarios";
 
 function PlantaDetails() {
-
+  const {admin} = useContext(AuthContext)
   const { id } = useParams()
   const navigate = useNavigate()
 
   const [ plantaDetails, setPlantaDetails ] = useState(null)
+  
 
   useEffect(() => {
     getPlantaDetails()
+   
     // eslint-disable-next-line
   }, [])
 
@@ -22,7 +26,7 @@ function PlantaDetails() {
       
       const response = await getPlantaDetailsService(id)
       setPlantaDetails(response.data)
-
+      console.log(response.data)
     } catch (error) {
       navigate("/error")
     }
@@ -50,18 +54,21 @@ function PlantaDetails() {
     <div>
       <h3>Detalles de la planta</h3>
 
-      <p>Imagen: {plantaDetails.image }</p>
+      <image src={plantaDetails.image } /> 
+
       <h4>Nombre: {plantaDetails.nombre}</h4>
       <p>Description: {plantaDetails.description}</p>
-      <p>Imagen: {plantaDetails.image}</p>
       <p>Parte utilizada: {plantaDetails.parteUtilizada}</p>
       <p>Hábitat de recolección: {plantaDetails.habitatRecoleccion}</p>
       <p>Principios activos: {plantaDetails.principiosActivos}</p>
       <p>Empleo: {plantaDetails.empleo}</p>
       
+      {admin === true && <div> <Link to = {`/plantas/${id}/edit`}><button>Editar</button></Link>
+
       <button onClick={handleDelete}>Borrar</button>
-      <Link to = {`/plantas/${id}/edit`}><button>Editar</button></Link>
-      
+      </div>
+    }
+
 
     {/* <AllComentarios /> */}
 

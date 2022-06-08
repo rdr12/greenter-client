@@ -9,6 +9,7 @@ function AuthWrapper(props) {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [user, setUser] = useState(null)
   const [isLoading, setIsLoading] = useState(true)
+  const [admin, setAdmin] = useState(false)
 
   //CHEQUEAMOS SI EL USUARIO ES VALIDO O NO
   //CHEQUEAMOS SI TIENE O NO TIENE TOKEN
@@ -22,18 +23,27 @@ function AuthWrapper(props) {
       setIsLoggedIn(true)
       setUser(response.data)
       setIsLoading(false)
+      setAdmin(false)
+    
+      if (response.data.adminRole === "admin"){
+        setAdmin(true)
+       
+      }
     } catch (error) {
-      console.log("El usuario no tiene token o el token no es valido")
+      
       setIsLoggedIn(false)
       setUser(null)
       setIsLoading(false)
+      setAdmin(false)
     }
   }
+  
 
   const passedContext = {
     isLoggedIn,
     user,
-    authenticateUser
+    authenticateUser,
+    admin
   }
 
   useEffect(() => {

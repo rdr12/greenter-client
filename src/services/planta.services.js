@@ -28,7 +28,7 @@ const editPlantaService = (id, planta) => {
   return service.patch(`/plantas/${id}`, planta);
 };
 const uploadService = (uploadForm) => {
-  return service.post("/uploader", uploadForm)
+  return service.get(`/uploader`, uploadForm);
 }
 
 

@@ -1,27 +1,38 @@
 import { NavLink } from 'react-router-dom'
+// import ImgHome2 from "../assets/imgHome2.jpg"
+// import ImgHome3 from "../assets/imgHome3.jpg"
+// import ImgHome4 from "../assets/imgHome4.jpg"
+// import ImgHome5 from "../assets/imgHome5.jpg"
+import ImgHome1 from "../assets/imgHome1.png"
 
 function Home() {
     return (
-      <div>
+      <div className='container-home'>
 
         <h3>Bienvenidos a Greenter</h3>
+      <div>
+        <NavLink to="../pages/home/fitoterapia.jsx" >
+          {/* <img src={ImgHome1} alt="image" class="img-fluid" /> */}
+          {/* <h3 className='text-2xl mt-2'>Fitoterapia</h3> */}
+        
+        </NavLink>
+        </div>  
 
-        <NavLink to="" className="bg-slate-500">
-          {/* <img src={imagen} alt="" className='w-full'/> */}
-          <h3 className='text-2xl mt-2'>Primera sección</h3>
-          <p className='py-4'>Texto</p>
+        <div>
+        <NavLink to="../pages/home/metodosObetencións.jsx">
+        {/* <img src={ImgHome1} alt="image" class="img-fluid" /> */}
+          {/* <h3 className='text-2xl mt-2'>Segunda Sección</h3> */}
+          
         </NavLink>
-        <NavLink to="">
-          {/* <img src={imagen} alt="" className='w-full'/> */}
-          <h3 className='text-2xl mt-2'>Segunda Sección</h3>
-          <p className='py-4'>Texto</p>
-        </NavLink>
-        <NavLink to="">
-          {/* <img src={imagen} alt="" className='w-full'/> */}
-          <h3 className='text-2xl mt-2'>Tercera Sección</h3>
-          <p className='py-4'>Texto</p>
-        </NavLink>
+        </div>
 
+        <div>
+        <NavLink to="../pages/home/origen y recolección.jsx">
+        {/* <img src={ImgHome1} alt="image" class="img-fluid" /> */}
+          {/* <h3 className='text-2xl mt-2'>Segunda Sección</h3> */}
+          
+        </NavLink>
+</div>
       </div>
     );
   }
