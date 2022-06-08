@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { addNewPlantaService } from "../services/planta.services";
-import {uploadService} from "../services/profile.services"
+// import {uploadService} from "../services/profile.services"
 
 function AddForm() {
   const [nombre, setNombre] = useState("");
@@ -10,7 +10,7 @@ function AddForm() {
   const [habitatRecoleccion, setHabitatRecoleccion] = useState("");
   const [principiosActivos, setPrincipiosActivos] = useState("");
   const [empleo, setEmpleo] = useState("");
-  const [image, setImage] = useState(null);
+  // const [image, setImage] = useState(null);
 
   const navigate = useNavigate();
 
@@ -26,23 +26,23 @@ function AddForm() {
   // const uploadForm = new FormData()
   // uploadForm.append("image", (e.target.files[0]))
   
-  const handleImageChange = async(e) => {
+  // const handleImageChange = async(e) => {
 
-    console.log(e.target.files[0])
+  //   console.log(e.target.files[0])
 
-    const uploadForm = new FormData()
-    uploadForm.append("image", e.target.files[0])
+  //   const uploadForm = new FormData()
+  //   uploadForm.append("image", e.target.files[0])
 
-    try {
+  //   try {
 
-      const response = await uploadService(uploadForm)
-      setImage(response.data)
+  //     const response = await uploadService(uploadForm)
+  //     setImage(response.data)
 
-    } catch {
-      navigate("/error")
-    }
+  //   } catch {
+  //     navigate("/error")
+  //   }
 
-  }
+  // }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -56,11 +56,13 @@ function AddForm() {
         habitatRecoleccion,
         principiosActivos,
         empleo,
-        image,
+        // image,
       };
+        await addNewPlantaService(newPlanta);
+        navigate("/plantas")
+      
 
-      await addNewPlantaService(newPlanta);
-     navigate("/plantas")
+   
     } catch (error) {
       navigate("/error");
     }
@@ -79,7 +81,7 @@ function AddForm() {
           value={nombre}
         />
 
-        <label htmlFor="description">Descripción::</label>
+        <label htmlFor="description">Descripción:</label>
         <input
           type="text"
           name="description"
@@ -125,8 +127,8 @@ function AddForm() {
           value={image}
         /> */}
 
-        <label htmlFor="image">Imagen</label>
-        <input type="file" name="image" onChange={handleImageChange} />
+        {/* <label htmlFor="image">Imagen</label>
+        <input type="file" name="image" onChange={handleImageChange} /> */}
 
         <button type="submit">Enviar</button>
       </form>

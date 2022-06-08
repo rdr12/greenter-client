@@ -4,7 +4,7 @@ import {
   editPlantaService,
   getPlantaDetailsService
 } from "../services/planta.services";
-import {uploadService} from "../services/profile.services"
+// import {uploadService} from "../services/profile.services"
 
 
 function PlantaEdit() {
@@ -15,7 +15,7 @@ function PlantaEdit() {
   const [habitatRecoleccion, setHabitatRecoleccion] = useState("");
   const [principiosActivos, setPrincipiosActivos] = useState("");
   const [empleo, setEmpleo] = useState("");
-  const [image, setImage] = useState("");
+  // const [image, setImage] = useState("");
 
   
   const navigate = useNavigate();
@@ -32,23 +32,23 @@ function PlantaEdit() {
   const handleEmpleoChange = (e) => setEmpleo(e.target.value);
 
 
-  const handleImageChange = async(e) => {
+  // const handleImageChange = async(e) => {
 
-    console.log(e.target.files[0])
+  //   console.log(e.target.files[0])
 
-    const uploadForm = new FormData()
-    uploadForm.append("image", e.target.files[0])
+  //   const uploadForm = new FormData()
+  //   uploadForm.append("image", e.target.files[0])
 
-    try {
+  //   try {
 
-      const response = await uploadService(uploadForm)
-      setImage(response.data)
+  //     const response = await uploadService(uploadForm)
+  //     setImage(response.data)
 
-    } catch {
-      navigate("/error")
-    }
+  //   } catch {
+  //     navigate("/error")
+  //   }
 
-  }
+  // }
   
   useEffect(() => {
     getPlantaDetails();
@@ -64,7 +64,7 @@ function PlantaEdit() {
       setHabitatRecoleccion(response.data.habitatRecoleccion)
       setPrincipiosActivos(response.data.principiosActivos)
       setEmpleo(response.data.principiosActivos)
-      setImage(response.data.image)
+      // setImage(response.data.image)
       // const {
       //   nombre,
       //   description,
@@ -111,7 +111,7 @@ function PlantaEdit() {
         habitatRecoleccion,
         principiosActivos,
         empleo,
-        image
+        // image
       }
       try{
       await editPlantaService(id, editPlanta);
@@ -176,12 +176,12 @@ function PlantaEdit() {
           value={empleo}
         />
 
-        <label htmlFor="image">Imagen</label>
-        <input type="file" name="image" onChange={handleImageChange} />
+        {/* <label htmlFor="image">Imagen</label>
+        <input type="file" name="image" onChange={handleImageChange} /> */}
 
         <button type="submit">Editar</button>
 </form>
-        <img src={image} alt="profile-pic" width={100} />
+        {/* <img src={image} alt="profile-pic" width={100} /> */}
       
     </div>
   );
