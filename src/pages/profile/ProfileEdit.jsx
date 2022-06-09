@@ -69,7 +69,7 @@ function ProfileEdit() {
   }
 
   return (
-    <div>
+    <div className="form">
       <form onSubmit={handleSubmit}>
 
       <label>Name:</label>
@@ -88,8 +88,8 @@ function ProfileEdit() {
           onChange={handleEmailChange} 
         />
 
-        <label htmlFor="image">Imagen</label>
-        <input type="file" name="image" onChange={handleImageChange} />
+        <label htmlFor="profilePic">Imagen</label>
+        <input type="file" name="profilePic" onChange={handleImageChange} />
 
         
 

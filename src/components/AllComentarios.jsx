@@ -10,9 +10,8 @@ function AllComentarios() {
   const { id } = useParams()
 
   useEffect(() => {
-   // if (id) getAllComentarios(id);
+  getAllComentarios()
     // eslint-disable-next-line
-    getAllComentarios()
   }, []);
 
   const getAllComentarios = async () => {
@@ -26,9 +25,8 @@ function AllComentarios() {
   };
 
   return (
-    <div>
-    {/* <div><AddComentario getAllComentarios.props={getAllComentarios.props} /></div> */}
-      <hr />
+    <div className = "form">
+    
       <h3>Comentarios</h3>
 
       {/* // 4. el Loading */}

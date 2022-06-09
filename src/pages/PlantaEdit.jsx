@@ -23,6 +23,8 @@ function PlantaEdit() {
   
 
   const handleNombreChange = (e) => setNombre(e.target.value);
+
+
   const handleDescriptionChange = (e) => setDescription(e.target.value);
   const handleParteUtilizadaChange = (e) => setParteUtilizada(e.target.value);
   const handleHabitatRecoleccionChange = (e) =>
@@ -65,40 +67,28 @@ function PlantaEdit() {
       setPrincipiosActivos(response.data.principiosActivos)
       setEmpleo(response.data.principiosActivos)
       // setImage(response.data.image)
-      // const {
-      //   nombre,
-      //   description,
-      //   parteUtilizada,
-      //   habitatRecoleccion,
-      //   principiosActivos,
-      //   empleo,
-      //   image,
-      // } = response.data;
+      const {
+        nombre,
+        description,
+        parteUtilizada,
+        habitatRecoleccion,
+        principiosActivos,
+        empleo,
+        // image,
+      } = response.data;
 
-      // setNombre(nombre);
-      // setDescription(description);
-      // setParteUtilizada(parteUtilizada);
-      // setHabitatRecoleccion(habitatRecoleccion);
-      // setPrincipiosActivos(principiosActivos);
-      // setEmpleo(empleo);
+      setNombre(nombre);
+      setDescription(description);
+      setParteUtilizada(parteUtilizada);
+      setHabitatRecoleccion(habitatRecoleccion);
+      setPrincipiosActivos(principiosActivos);
+      setEmpleo(empleo);
       // setImage(image);
     } catch (error) {
       navigate("/error");
     }
   };
-  // const handleImageChange = async (e) => {
-  //   console.log(e.target.files[0]);
-
-  //   const uploadForm = new FormData();
-  //   uploadForm.append("image", e.target.files[0]);
-
-  //   try {
-  //     const response = await uploadService(uploadForm);
-  //     setImage(response.data);
-  //   } catch {
-  //     navigate("/error");
-  //   }
-  // };
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -124,7 +114,7 @@ function PlantaEdit() {
   
   
   return (
-    <div>
+    <div className="form">
       <h3>Editar Planta</h3>
 
       <form onSubmit={handleSubmit}>
@@ -176,12 +166,10 @@ function PlantaEdit() {
           value={empleo}
         />
 
-        {/* <label htmlFor="image">Imagen</label>
-        <input type="file" name="image" onChange={handleImageChange} /> */}
 
         <button type="submit">Editar</button>
 </form>
-        {/* <img src={image} alt="profile-pic" width={100} /> */}
+        
       
     </div>
   );

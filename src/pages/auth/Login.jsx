@@ -43,7 +43,7 @@ function Login() {
   };
 
   return (
-    <div className="form-group">
+    <div className="form">
       <h1>Log In</h1>
 
       <form onSubmit={handleLogin}>

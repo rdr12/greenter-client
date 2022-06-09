@@ -31,10 +31,11 @@ function AddComentarios(props) {
 
 
   return (
-    <div>
-      <form onSubmit={handleSubmit} className="textarea">
+    <div class="form">
+  
+      <form onSubmit={handleSubmit} >
         <label htmlFor="textForm">Deja tu comentario</label>
-        <textarea name="text" value={text} onChange={handleTextChange}></textarea> 
+        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" value={text} onChange={handleTextChange}></textarea> 
          
        
         <button type="submit">Enviar</button>

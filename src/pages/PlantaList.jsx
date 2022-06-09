@@ -33,7 +33,7 @@ function PlantaList() {
   }
 
   return (
-    <div>
+    <div className = "form">
       <hr />
       <h3>Plantas</h3>
 

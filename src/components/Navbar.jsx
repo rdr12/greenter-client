@@ -25,7 +25,7 @@ function Navbar() {
   };
 
   return (
-    <div className="container-fluid">
+    <div className="form">
       {/* {user !== null && <p>Bienvenido: {user.username}</p>} */}
 
       {isLoggedIn === true ? (

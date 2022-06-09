@@ -22,9 +22,7 @@ function AddForm() {
   const handlePrincipiosActivosChange = (e) =>
     setPrincipiosActivos(e.target.value);
   const handleEmpleoChange = (e) => setEmpleo(e.target.value);
-  // const handleImageChange = (e) => setImage("image", (e.target.files[0]));
-  // const uploadForm = new FormData()
-  // uploadForm.append("image", (e.target.files[0]))
+  
   
   // const handleImageChange = async(e) => {
 
@@ -69,7 +67,9 @@ function AddForm() {
   };
 
   return (
-    <div className="form-group">
+
+    <div class="form">
+
       <h3>Añadir Planta</h3>
 
       <form onSubmit={handleSubmit} className="formulario">
@@ -119,16 +119,9 @@ function AddForm() {
           value={empleo}
         />
 
-        {/* <label htmlFor="image">Añade una imagen:</label>
-        <input
-          type="file"
-          name="image"
-          onChange={handleImageChange}
-          value={image}
-        /> */}
-
-        {/* <label htmlFor="image">Imagen</label>
-        <input type="file" name="image" onChange={handleImageChange} /> */}
+{/*    
+        <label htmlFor="image">Imagen</label>
+        <input type="file" name="image" onChange={handleImageChange} />  */}
 
         <button type="submit">Enviar</button>
       </form>
