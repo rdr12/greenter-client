@@ -8,11 +8,11 @@ service.interceptors.request.use((config)=>{
 
 const getAllComentariosService = ({id}) => {
     console.log(id)
-    return service.get(`/plantas/${id}/comentarios`, id)
+    return service.get(`/plantas/${id}/details`, id)
   };
 
 const addNewComentarioService = (id, text) => {
-    return service.post(`/plantas/${id}/comentario`, {text})
+    return service.post(`/plantas/${id}/details`, {text})
 }
 
 // const getComentarioDetailsService = (id) => {

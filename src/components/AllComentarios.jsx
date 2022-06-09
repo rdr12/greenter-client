@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { getAllComentariosService } from "../services/comentarios.servicies";
-import AddComentario from "comentarios.service"
+// import AddComentario from "comentarios.service"
 
 function AllComentarios(id) {
   const [allComentarios, setAllComentarios] = useState(null);
@@ -23,7 +23,7 @@ function AllComentarios(id) {
 
   return (
     <div>
-    <AddComentario getAllComentarios={getAllComentarios} />
+    {/* <div><AddComentario getAllComentarios={getAllComentarios} /></div> */}
       <hr />
       <h3>Comentarios</h3>
 
