@@ -69,7 +69,7 @@ function ProfileEdit() {
   }
 
   return (
-    <div className="form">
+    <div class="fichaCrerlanta">
       <form onSubmit={handleSubmit}>
 
       <label>Name:</label>

@@ -25,69 +25,71 @@ function Navbar() {
   };
 
   return (
-    <div className="form">
-      {/* {user !== null && <p>Bienvenido: {user.username}</p>} */}
-
+    <div className="">
       {isLoggedIn === true ? (
-        <nav className="navbar navbar-dark bg-dark">
-          <img
-            src={logo}
-            width="80"
-            height="80"
-            className="d-inline-block align-top"
-            alt="logo"
-          />
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <div class="container-fluid">
+            <img
+              src={logo}
+              width="80"
+              height="80"
+              className="d-inline-block align-top"
+              alt="logo"
+            />
 
-          <NavLink to="/" style={toggleStyles}>
-            {" "}
-            Home{" "}
-          </NavLink>
-          <NavLink to="/plantas" end={true} style={toggleStyles}>
-            {" "}
-            Plantas Medicinales{" "}
-          </NavLink>
-          <NavLink to="/plantas/PlantaAdd" end={true} style={toggleStyles}>
-            {" "}
-            Añadir una planta{" "}
-          </NavLink>
-          <NavLink to="/profile">Profile</NavLink>
+            <NavLink to="/" style={toggleStyles}>
+              {" "}
+              Home{" "}
+            </NavLink>
+            <NavLink to="/plantas" end={true} style={toggleStyles}>
+              {" "}
+              Plantas Medicinales{" "}
+            </NavLink>
+            <NavLink to="/plantas/PlantaAdd" end={true} style={toggleStyles}>
+              {" "}
+              Añadir una planta{" "}
+            </NavLink>
+            <NavLink to="/profile">Profile</NavLink>
 
-          <NavLink to="/profile/edit">Edita el Profile</NavLink>
-          <NavLink
-            to="/"
-            end={true}
-            style={toggleStyles}
-            onClick={handleLogout}
-          >
-            {" "}
-            Cerrar sesión{" "}
-          </NavLink>
+            <NavLink to="/profile/edit">Edita el Profile</NavLink>
+            <NavLink
+              to="/"
+              end={true}
+              style={toggleStyles}
+              onClick={handleLogout}
+            >
+              {" "}
+              Cerrar sesión{" "}
+            </NavLink>
+          </div>
         </nav>
       ) : (
         <nav className="navbar navbar-dark bg-dark">
-          <img
-            src={logo}
-            width="50"
-            height="50"
-            className="d-inline-block align-top"
-            alt="logo"
-          />
-          <NavLink to="/" style={toggleStyles}>
-            {" "}
-            Home{" "}
-          </NavLink>
-          <NavLink to="/plantas" end={true} style={toggleStyles}>
-            {" "}
-            Plantas Medicinales{" "}
-          </NavLink>
-          <NavLink to="/signup" style={toggleStyles}>
-            {" "}
-            Registro{" "}
-          </NavLink>
-          <NavLink to="/login" style={toggleStyles}>
-            {" "}
-            Acceder{" "}
-          </NavLink>
+          <div class="container-fluid">
+            <img
+              src={logo}
+              width="50"
+              height="50"
+              className="d-inline-block align-top"
+              alt="logo"
+            />
+            <NavLink to="/" style={toggleStyles}>
+              {" "}
+              Home{" "}
+            </NavLink>
+            <NavLink to="/plantas" end={true} style={toggleStyles}>
+              {" "}
+              Plantas Medicinales{" "}
+            </NavLink>
+            <NavLink to="/signup" style={toggleStyles}>
+              {" "}
+              Registro{" "}
+            </NavLink>
+            <NavLink to="/login" style={toggleStyles}>
+              {" "}
+              Acceder{" "}
+            </NavLink>
+          </div>
         </nav>
       )}
     </div>

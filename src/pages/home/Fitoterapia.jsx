@@ -5,7 +5,7 @@ function fitoterapia() {
   return (
 
     
-    <div className="container-text">
+    <div className="fichaCrerlanta">
          
          <h2>Fitoterapia, qué es y para qué sirve</h2>
       

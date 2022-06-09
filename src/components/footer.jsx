@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
 
 function footer() {
   return (
-    <div>
-        <footer><p align="left">Greenter® - La naturaleza en tu móvil</p></footer>
+    <div class="wrapper">
+      <p>Greenter® - La naturaleza en tu móvil</p>
     </div>
-  )
+  );
 }
 
-export default footer
+export default footer;

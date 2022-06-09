@@ -114,7 +114,7 @@ function PlantaEdit() {
   
   
   return (
-    <div className="form">
+    <div className="fichaCrerlanta">
       <h3>Editar Planta</h3>
 
       <form onSubmit={handleSubmit}>

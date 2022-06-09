@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { addNewPlantaService } from "../services/planta.services";
-// import {uploadService} from "../services/profile.services"
 
 function AddForm() {
   const [nombre, setNombre] = useState("");
@@ -10,7 +9,6 @@ function AddForm() {
   const [habitatRecoleccion, setHabitatRecoleccion] = useState("");
   const [principiosActivos, setPrincipiosActivos] = useState("");
   const [empleo, setEmpleo] = useState("");
-  // const [image, setImage] = useState(null);
 
   const navigate = useNavigate();
 
@@ -22,29 +20,9 @@ function AddForm() {
   const handlePrincipiosActivosChange = (e) =>
     setPrincipiosActivos(e.target.value);
   const handleEmpleoChange = (e) => setEmpleo(e.target.value);
-  
-  
-  // const handleImageChange = async(e) => {
-
-  //   console.log(e.target.files[0])
-
-  //   const uploadForm = new FormData()
-  //   uploadForm.append("image", e.target.files[0])
-
-  //   try {
-
-  //     const response = await uploadService(uploadForm)
-  //     setImage(response.data)
-
-  //   } catch {
-  //     navigate("/error")
-  //   }
-
-  // }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-   
 
     try {
       const newPlanta = {
@@ -54,22 +32,16 @@ function AddForm() {
         habitatRecoleccion,
         principiosActivos,
         empleo,
-        // image,
       };
-        await addNewPlantaService(newPlanta);
-        navigate("/plantas")
-      
-
-   
+      await addNewPlantaService(newPlanta);
+      navigate("/plantas");
     } catch (error) {
       navigate("/error");
     }
   };
 
   return (
-
     <div class="form">
-
       <h3>Añadir Planta</h3>
 
       <form onSubmit={handleSubmit} className="formulario">
@@ -118,10 +90,6 @@ function AddForm() {
           onChange={handleEmpleoChange}
           value={empleo}
         />
-
-{/*    
-        <label htmlFor="image">Imagen</label>
-        <input type="file" name="image" onChange={handleImageChange} />  */}
 
         <button type="submit">Enviar</button>
       </form>

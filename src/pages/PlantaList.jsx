@@ -33,7 +33,7 @@ function PlantaList() {
   }
 
   return (
-    <div className = "form">
+    <div className = "listar" >
       <hr />
       <h3>Plantas</h3>
 
@@ -43,9 +43,14 @@ function PlantaList() {
       {allPlantas !== null &&
         allPlantas.map((eachPlanta) => {
           return (
+            
             <div key={eachPlanta._id}>
               <Link to={`/plantas/${eachPlanta._id}/details`}>
+              <ul>
+              <li>
                 {eachPlanta.nombre}
+                </li>
+                </ul>
               </Link>
             </div>
           );

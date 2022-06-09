@@ -1,10 +1,10 @@
 .App {
   text-align: center;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 body {
-  background-image: url("assets/background.png");
   background-color: #cccccc;
- }
+}
 
 /* FORMULARIO */
 
@@ -190,6 +190,7 @@ form {
 .wrapper {
   display: grid;
   grid-template-columns: 1fr 2fr;
+  text-align: right;
 }
 .input-file-wrapper {
   grid-column: 2 / 3;
@@ -210,25 +211,18 @@ input {
   width: calc(100% - 100px);
 }
 
-
 /* //NAVBAR// */
 
 /* Basic styling */
 * {
   box-sizing: border-box;
-  padding: 50;
-  margin: 210;
+  padding: 300;
+  margin: 810;
 }
 
-body {
-  font-family: sans-serif;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-nav {
-  background: rgb(3, 96, 62);
-  padding: 15px 40px;
+.container-fluid {
+  background: rgb(59, 65, 63);
+  padding: 5px 40px;
 }
 ul {
   list-style-type: none;
@@ -239,6 +233,8 @@ a {
 }
 a:hover {
   text-decoration: underline;
+  text-decoration: none;
+  color: #d9e4e4;
 }
 .logo a:hover {
   text-decoration: none;
@@ -250,7 +246,7 @@ a:hover {
 }
 .logo a,
 .toggle a {
-  font-size: 20px;
+  font-size: 30px;
 }
 .button.secondary {
   border-bottom: 1px #444 solid;
@@ -303,7 +299,7 @@ a:hover {
   .button a {
     padding: 7.5px 15px;
     background: teal;
-    border: 1px #006d6d solid;
+    border: 1px #a26d11 solid;
   }
   .button.secondary a {
     background: transparent;
@@ -345,39 +341,107 @@ a:hover {
   }
 }
 
-/* CONTAINER */
-/* .container-text {
-  height: 150px;
-  display: flex;
-  font-family: arial;
-  font-size: 12px;
-  padding: 80px;
-  justify-content: center;
-  background: #d7d7d7;
-  color: #333;
-  height: 90vh;  
-  display: flex;
-  text-align: justify;
-
-}
-
-
-.row {
+.ultrabackground {
+  background: url(assets/background.png) no-repeat fixed center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100%;
   width: 100%;
-  justify-content: center;
-  display: flex;
-  padding-top: 30px;
+  text-align: center;
+}
+.title {
+  margin: 10px 0px 30px 0px;
+  padding: 0px;
+  background: rgba(87, 106, 99, 0.5);
+  display: inline-block;
+  height: 730px;
+  width: 500px;
 }
 
+.fichaEditarPerfil {
+  width: 50%;
+  height: 280%;
+  margin: 80px auto;
+  background-color: rgb(255, 255, 255);
+  color: rgb(137, 137, 137);
+  padding: 10px;
+  text-align: justify;
+  text-align: center;
+  border-radius: 5%;
+  padding: 1%;
+}
 
-p{
-  font-size: 15px; 
-} */
+.fichaCrerlanta {
+  width: 50%;
+  height: 280%;
+  margin: 80px auto;
+  color: rgb(137, 137, 137);
+  padding: 10px;
+  text-align: justify;
+  text-align: center;
+  border-radius: 5%;
+  padding: 1%;
+}
 
+p {
+  font-size: 13px;
+  color: rgb(0, 28, 13);
+}
+h7 {
+  color: #444;
+}
 
+.fichaEditarPerfil {
+  width: 50%;
+  height: 280%;
+  margin: 80px auto;
 
+  color: rgb(137, 137, 137);
+  padding: 10px;
+  text-align: justify;
+  text-align: center;
+  border-radius: 5%;
+  padding: 1%;
+}
 
+.fichaCrerlanta {
+  width: 50%;
+  height: 280%;
+  margin: 80px auto;
+  color: rgb(33, 94, 52);
+  padding: 10px;
+  text-align: justify;
+  text-align: center;
+  border-radius: 5%;
+  padding: 1%;
+}
 
+p {
+  font-size: 13px;
+  color: rgb(0, 28, 13);
+}
+h7 {
+  color: #444;
+}
+.listar {
+  width: 50%;
+  height: 280%;
+  margin: 80px auto;
+  color: rgb(33, 94, 52);
+  padding: 10px;
+  text-align: justify;
+  text-align: center;
+  border-radius: 5%;
+  padding: 1%;
+}
 
-
-
+form {
+  text-align: justify;
+  text-align: center;
+  align-items: center;
+}
+.form-control {
+  align-content: center;
+}

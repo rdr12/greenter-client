@@ -2,7 +2,7 @@ import React from "react";
 
 function metodosObetencións() {
   return (
-    <div className="container-text">
+    <div className="fichaCrerlanta">
       <h2>Métodos de obtención</h2>
       <p class="text-justify">
         En el campo de las plantas medicinales la farmacia galénica pretende una

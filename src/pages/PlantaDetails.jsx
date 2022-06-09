@@ -53,10 +53,10 @@ console.log("esto es un atraco",id)
   }
 
   return (
-    <div className = "form">
+    <div className = "fichaCrerlanta">
       <h3>Detalles de la planta</h3>
 
-      {/* <image src={plantaDetails.image } />  */}
+     
 
       <h4>Nombre: {plantaDetails.nombre}</h4>
       <p>Description: {plantaDetails.description}</p>

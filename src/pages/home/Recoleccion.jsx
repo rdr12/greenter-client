@@ -2,7 +2,7 @@ import React from "react";
 
 function origenRecoleccion() {
   return (
-    <div className="container-text">
+    <div className="fichaCrerlanta">
     <div> <h2>Origen y recolección</h2></div>
      
      

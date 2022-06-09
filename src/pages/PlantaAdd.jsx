@@ -38,7 +38,7 @@ function PlantaAdd() {
   }
 
   return (
-    <div>
+    <div className="fichaCrerlanta">
       <AddForm getAllPlantas={getAllPlantas} />
     </div>
   );

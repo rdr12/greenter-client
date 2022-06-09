@@ -29,10 +29,12 @@ function Profile() {
   }
 
   return (
-    <div>
+    <div class="fichaCrerlanta">
+    <li>
       <h1>Welcome: {user.name}</h1>
       <h3>Email: {user.email}</h3>
       <img src={user.profilePic} alt="pic" />
+      </li>
     </div>
   )
 }

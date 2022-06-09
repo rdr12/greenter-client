@@ -5,39 +5,51 @@ import { NavLink } from 'react-router-dom'
 // import ImgHome5 from "../assets/imgHome5.jpg"
 // import ImgHome1 from "../assets/imgHome1.png"
 
+import Sec1 from "assets/home1.png"
+import Sec2 from "assets/home2.png"
+import Sec3 from "assets/home3.png"
+
 
 function Home() {
     return (
-      <div className='container-home'>
+      <div class="ultrabackground">
 
-        <h3>Bienvenidos a Greenter</h3>
-      <div>
-      
-        <NavLink to="../pages/home/fitoterapia.jsx" >
-          {/* <img src={ImgHome1} alt="image" className="img-fluid" /> */}
-          {/* <h3 className='text-2xl mt-2'>Fitoterapia</h3> */}
+        {/* <h3>Bienvenidos a Greenter</h3> */}
+        <div class="title">
+        
+        <NavLink to="/Fitoterapia">
+          <img src={Sec1} alt="image" className="img-fluid" width="150px" />
+          <h7 className='text-2xl mt-2'>Más info</h7>
+       
         
         </NavLink>
+
+        
         </div>  
 
-        <div>
-        <NavLink to="../pages/home/metodosObetencións.jsx">
-        {/* <img src={ImgHome1} alt="image" className="img-fluid" /> */}
-          {/* <h3 className='text-2xl mt-2'>Segunda Sección</h3> */}
+        <div class="title">
+        <NavLink to="/Obtencion">
+        <img src={Sec2} alt="image" className="img-fluid" width="150px" />
+          <h7 className='text-2xl mt-2'>Más info</h7>
           
         </NavLink>
         </div>
 
-        <div>
-        <NavLink to="../pages/home/origen y recolección.jsx">
-        {/* <img src={ImgHome1} alt="image" className="img-fluid" /> */}
-          {/* <h3 className='text-2xl mt-2'>Segunda Sección</h3> */}
+
+
+        <div class="title">
+        
+        <NavLink to="/Recoleccion">
+        <img src={Sec3} alt="image" className="img-fluid" width="150px" />
+          <h7 className='text-2xl mt-2'>Más info</h7>
           
         </NavLink>
+        
 </div>
 
 
       </div>
+      
     );
   }
   
