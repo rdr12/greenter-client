@@ -26,14 +26,14 @@ function Navbar() {
 
   return (
     <div className="container-fluid">
-      {user !== null && <p>Bienvenido: {user.username}</p>}
+      {/* {user !== null && <p>Bienvenido: {user.username}</p>} */}
 
       {isLoggedIn === true ? (
         <nav className="navbar navbar-dark bg-dark">
           <img
             src={logo}
-            width="50"
-            height="50"
+            width="80"
+            height="80"
             className="d-inline-block align-top"
             alt="logo"
           />

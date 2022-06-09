@@ -2,9 +2,12 @@ import React from "react";
 
 function origenRecoleccion() {
   return (
-    <div>
-      <h2>Origen y recolección</h2>
-      <p>
+    <div className="container-text">
+    <div> <h2>Origen y recolección</h2></div>
+     
+     
+      
+      <p class="text-justify">
         Dentro de la medicina alternativa por medio de plantas es necesario
         conocer el contexto acerca de como se desarrollan los diferentes
         medicamentos fruto de este proceso. Esto permite que el profesional

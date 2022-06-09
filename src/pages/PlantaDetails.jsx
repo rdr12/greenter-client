@@ -2,16 +2,17 @@ import { useEffect, useState, useContext } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { deletePlantaService, getPlantaDetailsService } from "../services/planta.services";
 
-import {AuthContext} from "../context/auth.context"
-
+import {AuthContext} from "../context/auth.context";
 
 import AllComentarios from "components/AllComentarios";
+
+
 
 function PlantaDetails() {
   const {admin} = useContext(AuthContext)
   const { id } = useParams()
   const navigate = useNavigate()
-console.log(id)
+console.log("esto es un atraco",id)
   const [ plantaDetails, setPlantaDetails ] = useState(null)
   
 
@@ -72,6 +73,7 @@ console.log(id)
 
 
     <AllComentarios />
+    
 
     </div>
   );

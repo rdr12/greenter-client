@@ -1,18 +1,22 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { getAllComentariosService } from "../services/comentarios.servicies";
-// import AddComentario from "comentarios.service"
+import AddComentario from "components/AddComentario"
 
-function AllComentarios(id) {
+
+function AllComentarios() {
   const [allComentarios, setAllComentarios] = useState(null);
   const navigate = useNavigate();
+  const { id } = useParams()
 
   useEffect(() => {
-    if (id) getAllComentarios(id);
+   // if (id) getAllComentarios(id);
     // eslint-disable-next-line
-  }, [id]);
+    getAllComentarios()
+  }, []);
 
-  const getAllComentarios = async (id) => {
+  const getAllComentarios = async () => {
+    console.log("¨getting comments")
     try {
       const response = await getAllComentariosService(id);
       setAllComentarios(response.data);
@@ -23,7 +27,7 @@ function AllComentarios(id) {
 
   return (
     <div>
-    {/* <div><AddComentario getAllComentarios={getAllComentarios} /></div> */}
+    {/* <div><AddComentario getAllComentarios.props={getAllComentarios.props} /></div> */}
       <hr />
       <h3>Comentarios</h3>
 
@@ -31,14 +35,16 @@ function AllComentarios(id) {
       {allComentarios === null && <h3>... Loading</h3>}
 
       {allComentarios !== null &&
-        allComentarios.map((comentario, index) => {
+        allComentarios.map((comentario, _id) => {
           return (
-            <div key={`comentario-${index}`}>
+            <div key={`comentario-${_id}`}>
               {" "}
-              <p>{comentario.tex}</p>
+              <p>{comentario.text}</p>
             </div>
           );
         })}
+
+        <AddComentario getAllComentarios={getAllComentarios} />
     </div>
   );
 }

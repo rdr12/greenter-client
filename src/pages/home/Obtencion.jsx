@@ -2,9 +2,9 @@ import React from "react";
 
 function metodosObetencións() {
   return (
-    <div>
+    <div className="container-text">
       <h2>Métodos de obtención</h2>
-      <p>
+      <p class="text-justify">
         En el campo de las plantas medicinales la farmacia galénica pretende una
         serie de objetivos concretos: La transformación de las materias primas
         de partida, de origen vegetal, en formas farmacéuticas susceptibles de

@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { addNewComentarioService } from "../services/comentarios.servicies";
-import { useNavigate} from "react-router-dom";
+import { useNavigate, useParams} from "react-router-dom";
 
 
 function AddComentarios(props) {
   const [text, setText] = useState(" ");
   const navigate = useNavigate();
   const {getAllComentarios} = props
-  // const {id} = useParams()
+  const {id} = useParams()
   
 
   const handleTextChange = (e) => {setText(e.target.value)};
@@ -18,7 +18,7 @@ function AddComentarios(props) {
 
     try {
      
-      await addNewComentarioService(text);
+      await addNewComentarioService(id, text);
       getAllComentarios();
       setText(" ")
 
@@ -28,11 +28,13 @@ function AddComentarios(props) {
     }
   };
 
+
+
   return (
     <div>
       <form onSubmit={handleSubmit} className="textarea">
         <label htmlFor="textForm">Deja tu comentario</label>
-        <textarea name="text" value={text} clonChange={handleTextChange}></textarea> 
+        <textarea name="text" value={text} onChange={handleTextChange}></textarea> 
          
        
         <button type="submit">Enviar</button>

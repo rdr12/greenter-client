@@ -18,11 +18,15 @@ import Fitoterapia from "./pages/home/Fitoterapia"
 import Obtencion from "./pages/home/Obtencion"
 import Recoleccion from "./pages/home/Recoleccion"
 import IsPrivate from "./components/IsPrivate";
+import Footer from "./components/footer.jsx"
+
+
 
 function App() {
   return (
     <div className="App">
       <Navbar />
+     
       {/* <AllComentarios /> */}
 
       <Routes>
@@ -49,6 +53,9 @@ function App() {
       <Route path="/recoleccion" element={<Recoleccion/>} />
 
       </Routes>
+
+
+      <Footer />
     </div>
   );
 }
