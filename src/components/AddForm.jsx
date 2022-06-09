@@ -69,7 +69,7 @@ function AddForm() {
   };
 
   return (
-    <div class="form-group">
+    <div className="form-group">
       <h3>Añadir Planta</h3>
 
       <form onSubmit={handleSubmit} className="formulario">

@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 
 import { useContext } from "react";
 import { AuthContext } from "../context/auth.context";
+import logo from "assets/logo-greenter.png";
 
 function Navbar() {
   const { isLoggedIn, user, authenticateUser } = useContext(AuthContext);
@@ -24,18 +25,18 @@ function Navbar() {
   };
 
   return (
-    <div class="container-fluid">
+    <div className="container-fluid">
       {user !== null && <p>Bienvenido: {user.username}</p>}
 
       {isLoggedIn === true ? (
-        <nav class="navbar navbar-dark bg-dark">
+        <nav className="navbar navbar-dark bg-dark">
           <img
-            src="../assets/logo-greenter.png"
-            width="30"
-            height="30"
-            class="d-inline-block align-top"
-            alt=""
-          ></img>
+            src={logo}
+            width="50"
+            height="50"
+            className="d-inline-block align-top"
+            alt="logo"
+          />
 
           <NavLink to="/" style={toggleStyles}>
             {" "}
@@ -63,15 +64,14 @@ function Navbar() {
           </NavLink>
         </nav>
       ) : (
-        
-        <nav class="navbar navbar-dark bg-dark">
+        <nav className="navbar navbar-dark bg-dark">
           <img
-            src="../assets/logo-greenter.png"
-            width="30"
-            height="30"
-            class="d-inline-block align-top"
-            alt=""
-          ></img>
+            src={logo}
+            width="50"
+            height="50"
+            className="d-inline-block align-top"
+            alt="logo"
+          />
           <NavLink to="/" style={toggleStyles}>
             {" "}
             Home{" "}

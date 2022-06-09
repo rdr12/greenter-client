@@ -1,16 +1,17 @@
 import { useEffect, useState, useContext } from "react";
-import { deletePlantaService, getPlantaDetailsService } from "../services/planta.services";
 import { useParams, useNavigate, Link } from "react-router-dom";
+import { deletePlantaService, getPlantaDetailsService } from "../services/planta.services";
+
 import {AuthContext} from "../context/auth.context"
 
 
-// import AllComentarios from "../components/AllComentarios";
+import AllComentarios from "components/AllComentarios";
 
 function PlantaDetails() {
   const {admin} = useContext(AuthContext)
   const { id } = useParams()
   const navigate = useNavigate()
-
+console.log(id)
   const [ plantaDetails, setPlantaDetails ] = useState(null)
   
 
@@ -54,7 +55,7 @@ function PlantaDetails() {
     <div>
       <h3>Detalles de la planta</h3>
 
-      <image src={plantaDetails.image } /> 
+      {/* <image src={plantaDetails.image } />  */}
 
       <h4>Nombre: {plantaDetails.nombre}</h4>
       <p>Description: {plantaDetails.description}</p>
@@ -70,7 +71,7 @@ function PlantaDetails() {
     }
 
 
-    {/* <AllComentarios /> */}
+    <AllComentarios />
 
     </div>
   );

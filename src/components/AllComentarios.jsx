@@ -1,63 +1,44 @@
 import { useEffect, useState } from "react";
-import AddComentario from "../components/AddComentario";
-import { Link, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 import { getAllComentariosService } from "../services/comentarios.servicies";
+import AddComentario from "comentarios.service"
 
-function AllComentarios() {
+function AllComentarios(id) {
+  const [allComentarios, setAllComentarios] = useState(null);
+  const navigate = useNavigate();
 
-  // 1. Estado para la data
-  const [ allComentarios, setAllComentarios ] = useState(null)
-
-  const navigate = useNavigate()
-  // 2. ComponentDidMount
   useEffect(() => {
-    getAllComentarios()
-    // eslint-disable-next-line 
-  }, [])
-  
+    if (id) getAllComentarios(id);
+    // eslint-disable-next-line
+  }, [id]);
 
-  // 3. La funcion que busca la data
-  const getAllComentarios = async () => {
-
+  const getAllComentarios = async (id) => {
     try {
-     
-      // const response = await axios.get("http://localhost:5005/api/plantas/comentarios")
-      const response = await getAllComentariosService()
-
-      setAllComentarios(response.data)
-
+      const response = await getAllComentariosService(id);
+      setAllComentarios(response.data);
     } catch (error) {
-      if (error.response.status === 401) {
-        navigate("/login")
-        
-      } else {
-        navigate("/error")
-      }
+      navigate("/error");
     }
-  }
-
-  if (allComentarios === null) {
-    return <h3>... Loading</h3>
-  }
+  };
 
   return (
     <div>
-      <AddComentario getAllComentarios={getAllComentarios}/>
+    <AddComentario getAllComentarios={getAllComentarios} />
       <hr />
       <h3>Comentarios</h3>
 
       {/* // 4. el Loading */}
       {allComentarios === null && <h3>... Loading</h3>}
 
-      {allComentarios !== null && allComentarios.map((eachComentario) => {
+      {allComentarios !== null &&
+        allComentarios.map((comentario, index) => {
           return (
-            <div key={eachComentario._id}>
-              {/* <p>{eachComentario.user}</p> */}
-              <Link to={`/plantas/${eachComentario._id}/details`}>{eachComentario.user}</Link>
+            <div key={`comentario-${index}`}>
+              {" "}
+              <p>{comentario.tex}</p>
             </div>
-          )
+          );
         })}
-
     </div>
   );
 }

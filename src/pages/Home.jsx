@@ -12,7 +12,7 @@ function Home() {
         <h3>Bienvenidos a Greenter</h3>
       <div>
         <NavLink to="../pages/home/fitoterapia.jsx" >
-          {/* <img src={ImgHome1} alt="image" class="img-fluid" /> */}
+          {/* <img src={ImgHome1} alt="image" className="img-fluid" /> */}
           {/* <h3 className='text-2xl mt-2'>Fitoterapia</h3> */}
         
         </NavLink>
@@ -20,7 +20,7 @@ function Home() {
 
         <div>
         <NavLink to="../pages/home/metodosObetencións.jsx">
-        {/* <img src={ImgHome1} alt="image" class="img-fluid" /> */}
+        {/* <img src={ImgHome1} alt="image" className="img-fluid" /> */}
           {/* <h3 className='text-2xl mt-2'>Segunda Sección</h3> */}
           
         </NavLink>
@@ -28,7 +28,7 @@ function Home() {
 
         <div>
         <NavLink to="../pages/home/origen y recolección.jsx">
-        {/* <img src={ImgHome1} alt="image" class="img-fluid" /> */}
+        {/* <img src={ImgHome1} alt="image" className="img-fluid" /> */}
           {/* <h3 className='text-2xl mt-2'>Segunda Sección</h3> */}
           
         </NavLink>

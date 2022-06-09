@@ -1,29 +1,36 @@
 import service from "./config.services";
 
-const getAllComentariosService = () => {
-    return service.get("/comentarios");
+service.interceptors.request.use((config)=>{
+    const storedToken = localStorage.getItem("authToken")
+    config.headers = storedToken && {Authorization: `Bearer ${storedToken}`}
+    return config;
+   })
+
+const getAllComentariosService = ({id}) => {
+    console.log(id)
+    return service.get(`/plantas/${id}/comentarios`, id)
   };
 
-const addNewComentarioService = (newComentario) => {
-    return service.post("/comentarios/comentarioAdd", newComentario) 
+const addNewComentarioService = (id, text) => {
+    return service.post(`/plantas/${id}/comentario`, {text})
 }
 
-const getComentarioDetailsService = (id) => {
-    return service.get(`comentarios/${id}`) 
-}
+// const getComentarioDetailsService = (id) => {
+//     return service.get(`comentarios/${id}`) 
+// }
 
-const deleteComentarioService = (id) => {
-    return service.delete(`comentarios/${id}`) 
-}
+// const deleteComentarioService = (id) => {
+//     return service.delete(`comentarios/${id}`) 
+// }
 
-const editComentarioService = (id, comentario) => {
-    return service.delete(`comentarios/${id}`, comentario) 
-}
+// const editComentarioService = (id, comentario) => {
+//     return service.delete(`comentarios/${id}`, comentario) 
+// }
 
 export {
     getAllComentariosService,
     addNewComentarioService,
-    getComentarioDetailsService,
-    deleteComentarioService,
-    editComentarioService
+    // getComentarioDetailsService,
+    // deleteComentarioService,
+    // editComentarioService
   };

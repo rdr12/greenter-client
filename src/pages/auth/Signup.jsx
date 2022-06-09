@@ -45,7 +45,7 @@ function Signup() {
       <h1>Sign Up</h1>
 
       <form onSubmit={handleSignup}>
-        <div class="row">
+        <div className="row">
           <label htmlFor="user">Nombre:</label>
           <input
             type="text"
@@ -55,7 +55,7 @@ function Signup() {
           />
         </div>
         <br />
-        <div class="row">
+        <div className="row">
           <label htmlFor="email">Email:</label>
           <input
             type="email"
@@ -66,7 +66,7 @@ function Signup() {
         </div>
 
         <br />
-        <div class="row">
+        <div className="row">
           <label htmlFor="constraseña">Contraseña:</label>
           <input
             type="password"
@@ -78,7 +78,7 @@ function Signup() {
         <br />
 
         {errorMessage !== null && <p>{errorMessage}</p>}
-        <div class="row">
+        <div className="row">
           <button type="submit">Signup</button>
         </div>
       </form>

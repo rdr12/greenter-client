@@ -43,11 +43,11 @@ function Login() {
   };
 
   return (
-    <div class="form-group">
+    <div className="form-group">
       <h1>Log In</h1>
 
       <form onSubmit={handleLogin}>
-        <div class="row">
+        <div className="row">
           <label htmlFor="email">Email:</label>
           <input
             type="email"
@@ -58,7 +58,7 @@ function Login() {
         </div>
 
         <br />
-        <div class="row">
+        <div className="row">
           <label htmlFor="password">Contraseña:</label>
           <input
             type="password"
@@ -70,7 +70,7 @@ function Login() {
         <br />
 
         {errorMessage !== null && <p>{errorMessage}</p>}
-        <div class="row">
+        <div className="row">
           <button type="submit">Login</button>
         </div>
       </form>
