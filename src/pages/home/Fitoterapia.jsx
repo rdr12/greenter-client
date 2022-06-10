@@ -1,15 +1,9 @@
 import React from "react";
-import Img1 from  "assets/imgHome1.jpeg"
 
 function fitoterapia() {
   return (
-
-    
     <div className="fichaCrerlanta">
-         
-         <h2>Fitoterapia, qué es y para qué sirve</h2>
-      
-            
+      <h2>Fitoterapia, qué es y para qué sirve</h2>
       <p align="text-justify">
         Seguro que más de una vez has tomado una manzanilla para recuperarte de
         una digestión pesada. Las plantas medicinales han estado cerca de

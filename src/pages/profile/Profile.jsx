@@ -3,13 +3,10 @@ import { useNavigate } from "react-router-dom"
 
 import { getProfileService } from "../../services/profile.services"
 
-
 function Profile() {
+  const [ user, setUser ] = useState(null);
+  const navigate = useNavigate();
 
-  const [ user, setUser ] = useState(null)
-
-  const navigate = useNavigate()
-  
   useEffect(() => {
     getUser()
     // eslint-disable-next-line
@@ -22,7 +19,7 @@ function Profile() {
     } catch(err) {
       navigate("/login")
     }
-  }
+  };
 
   if (!user) {
     return <h3>...Loading</h3>
@@ -36,7 +33,7 @@ function Profile() {
       <img src={user.profilePic} alt="pic" />
       </li>
     </div>
-  )
+  );
 }
 
-export default Profile
+export default Profile;

@@ -8,8 +8,6 @@ service.interceptors.request.use((config) => {
   return config;
 });
 
-
-
 const signupService = (user) => {
   return service.post("/auth/signup", user);
 };

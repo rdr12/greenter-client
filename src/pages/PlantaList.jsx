@@ -36,21 +36,15 @@ function PlantaList() {
     <div className = "listar" >
       <hr />
       <h3>Plantas</h3>
-
       {/* // 4. el Loading */}
       {allPlantas === null && <h3>... Loading</h3>}
 
       {allPlantas !== null &&
         allPlantas.map((eachPlanta) => {
           return (
-            
             <div key={eachPlanta._id}>
               <Link to={`/plantas/${eachPlanta._id}/details`}>
-              <ul>
-              <li>
-                {eachPlanta.nombre}
-                </li>
-                </ul>
+                <span>{eachPlanta.nombre}</span>
               </Link>
             </div>
           );

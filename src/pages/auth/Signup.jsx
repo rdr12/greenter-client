@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 
 function Signup() {
   const navigate = useNavigate();
-
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -17,7 +16,6 @@ function Signup() {
   const handleSignup = async (e) => {
     e.preventDefault();
     // ... signup logic here
-
     const user = {
       username,
       email,
@@ -42,46 +40,57 @@ function Signup() {
 
   return (
     <div classname="container">
-      <h1>Sign Up</h1>
-
-      <form onSubmit={handleSignup}>
-        <div className="row">
-          <label htmlFor="user">Nombre:</label>
-          <input
-            type="text"
-            name="username"
-            value={username}
-            onChange={handleUsernameChange}
-          />
+      <div class="row d-flex justify-content-center">
+        <div class="col-sm-4">
+          <div className="mt-5">
+            <h1 className="h1 mb-5">Sign Up</h1>
+            <form onSubmit={handleSignup}>
+              <div className="form-group">
+                <label htmlFor="user">Nombre:</label>
+                <input
+                  type="text"
+                  name="username"
+                  className="form-control"
+                  value={username}
+                  onChange={handleUsernameChange}
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="email">Email:</label>
+                <input
+                  type="email"
+                  name="email"
+                  className="form-control"
+                  value={email}
+                  onChange={handleEmailChange}
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="constraseña">Contraseña:</label>
+                <input
+                  type="password"
+                  name="password"
+                  value={password}
+                  onChange={handlePasswordChange}
+                  className="form-control"
+                />
+              </div>
+              {
+                errorMessage !== null && (
+                  <div class="alert alert-danger mt-2" role="alert">
+                    {errorMessage}
+                  </div>
+                )
+              }
+              <button
+                className="btn btn-primary mt-1"
+                type="submit">
+                  Signup
+              </button>
+            </form>
+          </div>
         </div>
-        <br />
-        <div className="row">
-          <label htmlFor="email">Email:</label>
-          <input
-            type="email"
-            name="email"
-            value={email}
-            onChange={handleEmailChange}
-          />
-        </div>
-
-        <br />
-        <div className="row">
-          <label htmlFor="constraseña">Contraseña:</label>
-          <input
-            type="password"
-            name="password"
-            value={password}
-            onChange={handlePasswordChange}
-          />
-        </div>
-        <br />
-
-        {errorMessage !== null && <p>{errorMessage}</p>}
-        <div className="row">
-          <button type="submit">Signup</button>
-        </div>
-      </form>
+      </div>
     </div>
   );
 }

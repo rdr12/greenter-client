@@ -24,24 +24,31 @@ function AllComentarios() {
   };
 
   return (
-    <div className="form">
-      <h3>Comentarios</h3>
+    <section>
+      <div classname="container">
+        <div class="row d-flex justify-content-center">
+          <div class="col-sm-8">
+            <div className="form mt-5">
+              <h3>Comentarios</h3>
 
-      {/* // 4. el Loading */}
-      {allComentarios === null && <h3>... Loading</h3>}
+                {/* // 4. el Loading */}
+                {allComentarios === null && <h3>... Loading</h3>}
+                {allComentarios !== null &&
+                  allComentarios.map((comentario, _id) => {
+                    return (
+                      <div key={`comentario-${_id}`}>
+                        {" "}
+                        <p>{comentario.text}</p>
+                      </div>
+                    );
+                  })}
 
-      {allComentarios !== null &&
-        allComentarios.map((comentario, _id) => {
-          return (
-            <div key={`comentario-${_id}`}>
-              {" "}
-              <p>{comentario.text}</p>
             </div>
-          );
-        })}
-
+          </div>
+        </div>
+      </div>
       <AddComentario getAllComentarios={getAllComentarios} />
-    </div>
+    </section>
   );
 }
 

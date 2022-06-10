@@ -6,9 +6,7 @@ import {
 } from "../services/planta.services";
 // import {uploadService} from "../services/profile.services"
 
-
 function PlantaEdit() {
-
   const [nombre, setNombre] = useState("");
   const [description, setDescription] = useState("");
   const [parteUtilizada, setParteUtilizada] = useState("");
@@ -16,42 +14,27 @@ function PlantaEdit() {
   const [principiosActivos, setPrincipiosActivos] = useState("");
   const [empleo, setEmpleo] = useState("");
   // const [image, setImage] = useState("");
-
-  
   const navigate = useNavigate();
   const { id } = useParams();
-  
-
   const handleNombreChange = (e) => setNombre(e.target.value);
-
-
   const handleDescriptionChange = (e) => setDescription(e.target.value);
   const handleParteUtilizadaChange = (e) => setParteUtilizada(e.target.value);
-  const handleHabitatRecoleccionChange = (e) =>
-    setHabitatRecoleccion(e.target.value);
-  const handlePrincipiosActivosChange = (e) =>
-    setPrincipiosActivos(e.target.value);
+  const handleHabitatRecoleccionChange = (e) => setHabitatRecoleccion(e.target.value);
+  const handlePrincipiosActivosChange = (e) => setPrincipiosActivos(e.target.value);
   const handleEmpleoChange = (e) => setEmpleo(e.target.value);
 
-
   // const handleImageChange = async(e) => {
-
   //   console.log(e.target.files[0])
-
   //   const uploadForm = new FormData()
   //   uploadForm.append("image", e.target.files[0])
-
   //   try {
-
   //     const response = await uploadService(uploadForm)
   //     setImage(response.data)
-
   //   } catch {
   //     navigate("/error")
   //   }
-
   // }
-  
+
   useEffect(() => {
     getPlantaDetails();
     // eslint-disable-next-line
@@ -88,22 +71,20 @@ function PlantaEdit() {
       navigate("/error");
     }
   };
-  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const editPlanta = {
+      nombre,
+      description,
+      parteUtilizada,
+      habitatRecoleccion,
+      principiosActivos,
+      empleo,
+      // image
+    };
 
-    
-      const editPlanta = {
-        nombre,
-        description,
-        parteUtilizada,
-        habitatRecoleccion,
-        principiosActivos,
-        empleo,
-        // image
-      }
-      try{
+    try{
       await editPlantaService(id, editPlanta);
       navigate(`/plantas/${id}/details`);
     } catch (error) {
@@ -111,12 +92,9 @@ function PlantaEdit() {
     }
   };
 
-  
-  
   return (
     <div className="fichaCrerlanta">
       <h3>Editar Planta</h3>
-
       <form onSubmit={handleSubmit}>
         <label htmlFor="Nombre">Nombre:</label>
         <input
@@ -166,11 +144,8 @@ function PlantaEdit() {
           value={empleo}
         />
 
-
         <button type="submit">Editar</button>
-</form>
-        
-      
+      </form>
     </div>
   );
 }

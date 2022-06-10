@@ -1,6 +1,6 @@
 import React from "react";
 
-function metodosObetencións() {
+function Obtencion() {
   return (
     <div className="fichaCrerlanta">
       <h2>Métodos de obtención</h2>
@@ -32,4 +32,4 @@ function metodosObetencións() {
   );
 }
 
-export default metodosObetencións;
+export default Obtencion;

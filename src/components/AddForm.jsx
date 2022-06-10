@@ -41,58 +41,77 @@ function AddForm() {
   };
 
   return (
-    <div class="form">
-      <h3>Añadir Planta</h3>
-
-      <form onSubmit={handleSubmit} className="formulario">
-        <label htmlFor="nombre">Nombre de la Planta:</label>
-        <input
-          type="text"
-          name="nombre"
-          onChange={handleNombreChange}
-          value={nombre}
-        />
-
-        <label htmlFor="description">Descripción:</label>
-        <input
-          type="text"
-          name="description"
-          onChange={handleDescriptionChange}
-          value={description}
-        />
-
-        <label htmlFor="parteUtilizada">Parte Utilizada:</label>
-        <input
-          type="text"
-          name="parteUtilizada"
-          onChange={handleParteUtilizadaChange}
-          value={parteUtilizada}
-        />
-        <label htmlFor="habitatRecoleccion">Hábitat de recolección:</label>
-        <input
-          type="text"
-          name="habitatRecoleccion"
-          onChange={handleHabitatRecoleccionChange}
-          value={habitatRecoleccion}
-        />
-        <label htmlFor="habitatRecoleccion">Principios activos:</label>
-        <input
-          type="text"
-          name="principiosActivos"
-          onChange={handlePrincipiosActivosChange}
-          value={principiosActivos}
-        />
-
-        <label htmlFor="habitatRecoleccion">Empleo:</label>
-        <input
-          type="text"
-          name="empleo"
-          onChange={handleEmpleoChange}
-          value={empleo}
-        />
-
-        <button type="submit">Enviar</button>
-      </form>
+    <div classname="container">
+      <div class="row d-flex justify-content-center">
+        <div class="col-sm-8">
+          <div className="form mt-5">
+            <h1 className="h1 mb-5">Añadir Planta</h1>
+            <form onSubmit={handleSubmit}>
+              <div className="form-group">
+                <label htmlFor="nombre">Nombre de la Planta:</label>
+                <input
+                  type="text"
+                  name="nombre"
+                  onChange={handleNombreChange}
+                  value={nombre}
+                  className="form-control"
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="description">Descripción:</label>
+                <input
+                  type="text"
+                  name="description"
+                  onChange={handleDescriptionChange}
+                  value={description}
+                  className="form-control"
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="parteUtilizada">Parte Utilizada:</label>
+                <input
+                  type="text"
+                  name="parteUtilizada"
+                  onChange={handleParteUtilizadaChange}
+                  value={parteUtilizada}
+                  className="form-control"
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="habitatRecoleccion">Hábitat de recolección:</label>
+                <input
+                  type="text"
+                  name="habitatRecoleccion"
+                  onChange={handleHabitatRecoleccionChange}
+                  value={habitatRecoleccion}
+                  className="form-control"
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="habitatRecoleccion">Principios activos:</label>
+                <input
+                  type="text"
+                  name="principiosActivos"
+                  onChange={handlePrincipiosActivosChange}
+                  value={principiosActivos}
+                  className="form-control"
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="habitatRecoleccion">Empleo:</label>
+                <input
+                  type="text"
+                  name="empleo"
+                  onChange={handleEmpleoChange}
+                  value={empleo}
+                  className="form-control"
+                />
+              </div>
+              <button className="btn btn-primary mt-1" type="submit">Enviar</button>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

@@ -1,70 +1,115 @@
-# Getting Started with Create React App
+# GREENTER
+Greenter es una aplicación destinada a consulta de plantas medicinales y sus características.
+Puedes visitarla en https://greenter.netlify.app/
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## DESCRIPCIÓN
 
-## Available Scripts
+Aplicación de Fitoterapia donde los usuarios pueden consultar información sobre plantas medicinales y sus usos. También pueden registrarse para formar parte de la comunidad de Greenter y poder comentar o realizar preguntas a otros usuarios en las fichas de cada planta.
 
-In the project directory, you can run:
+### USUARIOS Y ADMIN
 
-### `npm start`
+- Registrarse: el usuario puede registrarse
+- Iniciar sesión : el usuario puede iniciar sesión después de registrarse.
+- Cerrar sesión: El usuario cuando está logado puede cerrar sesión.
+- Perfil : los usuarios registrados pueden acceder a su perfil.
+- Editar perfil: los usuarios registrados pueden editar su perfil, incluyendo el cambio de imagen.
+- Consulta de información: los usuarios, estén o no registrados pueden acceder a la información sobre las plantas que hay en la aplicación.
+- Dejar comentarios en las fichas de las plantas: los usuarios registrados pueden dejar comentarios o preguntas en la ficha de cada planta.
+- Página 404: si los usuarios intentan acceder a una ruta que no exite podrán visualizar la página de error.
+- Página Error: error de servidor o problema con rutas.
+-Admin: el administrador es el único que puede añadir, editar y borrar información de la aplicación. También es el único que añade a otros administradores ya que por defecto en el aparece usuario.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### ESTRUCTURA: 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+La estructura de rutas de front-end con React:
 
-### `npm test`
+### RUTAS DE FRONT-END
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- "/" - Home 
+- "/plantas" - Listao de plantas
+- "/plantas/:id/details" - Fichas con los detalles de cada planta
+- "/plantas/:id/edit" - Edición de la información de la planta
+- IsPrivate - Página privada
+- "/plantas/plantaAdd" - Añadir una nueva planta
+- "/signup" - Registro de nuevo usuario
+- "/login" - Inicio de sesión del usuario registrado
+- "/profile" - Perfil del usuario
+- "/profile/edit" - Edición de perfil de usuario
+- "/error" - Página de error
+- "*"  - Página  NorFound
+- "/fitoterapia" - Información primera sección
+- "/obtencion" - Información segunda sección
+- "/recoleccion" - Información tercera sesión
+       
+        
+### RUTAS DE BACK-END
 
-### `npm run build`
+## Auth Routes
+- POST "/api/auth/signup" - registrar un usuario
+- POST "/api/auth/login" - verificar las credenciales del usuario y abrir "sesion"
+- GET "/api/auth/verify" - checkea que el token es valido, y el rol del admin
+## Index Routes
+- "./profile.routes.js" - Perfil
+- "./uploader.routes" - Edición del perfil
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Plantas Routes
+- GET "/api/plantas" - listado de plantas (por nombre)
+- POST "api/plantas" - creación de una Planta nueva
+- GET "/api/plantas/:id" - detalles
+- DELETE "/api/plantas/:id" - borrar
+- PATCH "/api/plantas/:id" - editar
+- GET "/api/plantas/:id/comentarios" - para ver los comentarios
+POST "/api/plantas/:id" - añadir comentarios 
+- GET "/api/profile" - Donde se loguea el usuario
+- PATCH "/api/profile" - Edición de perfil de usuario
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Modelos
+- Comentarios
+- Planta
+- Usuario
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Páginas
 
-### `npm run eject`
+- Login
+- Signup
+- Error
+- NorFound
+- Fitoterapia
+- Obtención
+- Recolección
+- Home
+- PlantaAdd
+- PlantaDetails
+- PlantaEdit
+- PlantaList
+- Services: auth
+- Services: comentarios
+- Services: config
+- Services: Planta
+- Services: profile
+- App css
+- App js
+- App test
+- Index
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Componentes
+- Comentario
+- AllComentarios
+- IsPrivate
+- Navbar
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### ENLACES
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### GitHub
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+https://github.com/rdr12/greenter-client
+https://github.com/rdr12/greenter-server
 
 ### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+https://greenter.netlify.app/
 
-### `npm run build` fails to minify
+### Presentación
+https://docs.google.com/presentation/d/13fJhVAvf14OLty1ynxRIh1X36rkln7vhJqQVkE-VHTQ/edit?usp=sharing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+

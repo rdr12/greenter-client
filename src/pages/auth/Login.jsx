@@ -43,37 +43,45 @@ function Login() {
   };
 
   return (
-    <div className="form">
-      <h1>Log In</h1>
+    <div class="container">
+      <div class="row d-flex justify-content-center">
+        <div class="col-sm-8">
+          <div className="form mt-5">
+            <h1 className="h1 mb-5">Log In</h1>
+            <form onSubmit={handleLogin}>
+              <div className="form-group">
+                <label htmlFor="email">Email:</label>
+                <input
+                  type="email"
+                  name="email"
+                  value={email}
+                  className="form-control"
+                  onChange={handleEmailChange}
+                />
+              </div>
 
-      <form onSubmit={handleLogin}>
-        <div className="row">
-          <label htmlFor="email">Email:</label>
-          <input
-            type="email"
-            name="email"
-            value={email}
-            onChange={handleEmailChange}
-          />
+              <div className="form-group mb-1">
+                <label htmlFor="password">Contraseña:</label>
+                <input
+                  type="password"
+                  name="password"
+                  value={password}
+                  onChange={handlePasswordChange}
+                  className="form-control"
+                />
+              </div>
+              {
+                errorMessage !== null && (
+                  <div class="alert alert-danger mt-2" role="alert">
+                    {errorMessage}
+                  </div>
+                )
+              }
+              <button className="btn btn-primary mt-1" type="submit">Login</button>
+            </form>
+          </div>
         </div>
-
-        <br />
-        <div className="row">
-          <label htmlFor="password">Contraseña:</label>
-          <input
-            type="password"
-            name="password"
-            value={password}
-            onChange={handlePasswordChange}
-          />
-        </div>
-        <br />
-
-        {errorMessage !== null && <p>{errorMessage}</p>}
-        <div className="row">
-          <button type="submit">Login</button>
-        </div>
-      </form>
+      </div>
     </div>
   );
 }

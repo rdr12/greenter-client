@@ -27,10 +27,10 @@ const deletePlantaService = (id) => {
 const editPlantaService = (id, planta) => {
   return service.patch(`/plantas/${id}`, planta);
 };
+
 // const uploadService = (uploadForm) => {
 //   return service.get(`/uploader`, uploadForm);
 // }
-
 
 export {
   getAllPlantasService,

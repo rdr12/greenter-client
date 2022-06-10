@@ -26,19 +26,27 @@ function AddComentarios(props) {
   };
 
   return (
-    <div class="form">
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="textForm">Deja tu comentario</label>
-        <textarea
-          class="form-control"
-          placeholder="Leave a comment here"
-          id="floatingTextarea"
-          value={text}
-          onChange={handleTextChange}
-        ></textarea>
-
-        <button type="submit">Enviar</button>
-      </form>
+    <div classname="container">
+      <div class="row d-flex justify-content-center">
+        <div class="col-sm-8">
+          <div className="form mt-5">
+            <form onSubmit={handleSubmit}>
+              <div className="form-group">
+                <label htmlFor="textForm">Deja tu comentario</label>
+                <textarea
+                  class="form-control"
+                  placeholder="Leave a comment here"
+                  id="floatingTextarea"
+                  value={text}
+                  onChange={handleTextChange}
+                  rows="3"
+                ></textarea>
+              </div>
+              <button className="btn btn-primary mt-1" type="submit">Enviar</button>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

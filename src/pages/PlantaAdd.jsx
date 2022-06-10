@@ -3,15 +3,11 @@ import AddForm from "../components/AddForm";
 import { useNavigate } from "react-router-dom";
 import { getAllPlantasService } from "../services/planta.services";
 
-
 function PlantaAdd() {
   // 1. Estado para la data
   const [allPlantas, setAllPlantas] = useState(null);
-  
-
-
-
   const navigate = useNavigate();
+
   // 2. ComponentDidMount
   useEffect(() => {
     getAllPlantas();

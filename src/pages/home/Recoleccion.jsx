@@ -3,10 +3,9 @@ import React from "react";
 function origenRecoleccion() {
   return (
     <div className="fichaCrerlanta">
-    <div> <h2>Origen y recolección</h2></div>
-     
-     
-      
+      <div>
+        <h2>Origen y recolección</h2>
+      </div>
       <p class="text-justify">
         Dentro de la medicina alternativa por medio de plantas es necesario
         conocer el contexto acerca de como se desarrollan los diferentes

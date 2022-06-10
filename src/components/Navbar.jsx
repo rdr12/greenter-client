@@ -5,7 +5,7 @@ import { AuthContext } from "../context/auth.context";
 import logo from "assets/logo-greenter.png";
 
 function Navbar() {
-  const { isLoggedIn, user, authenticateUser } = useContext(AuthContext);
+  const { isLoggedIn, authenticateUser } = useContext(AuthContext);
 
   const toggleStyles = (navInfo) => {
     return navInfo.isActive === true ? activeStyles : inActiveStyles;
@@ -27,7 +27,7 @@ function Navbar() {
   return (
     <div className="">
       {isLoggedIn === true ? (
-        <nav class="navbar navbar-expand-lg navbar-light">
+        <nav class="navbar navbar-dark bg-dark">
           <div class="container-fluid">
             <img
               src={logo}
